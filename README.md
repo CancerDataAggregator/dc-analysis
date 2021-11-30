@@ -5,5 +5,9 @@ This is a collection of codes to do analysis on the data from the DC's currently
 IDC analysis - analyzes a simple copy of the IDC view as a table
 GDC extraction code
 Code to be able to clean up data extracted - in jsonl.gz file
+There is a repo to generate a BigQuery schema using ALL lines of a data file (must use --keep_nulls option).
+pip install bigquery_schema_generator
+https://github.com/bxparks/bigquery-schema-generator
+GDC data uploaded in 3 tables: gdc_cases_1, gdc_cases_2, gdc_files
 ## To Do
-BigQuery has some issues auto-detecting sparsely populated fields. This is not good and now we need to find a way to extract a JSON schema and transform it into a BQ schema to uploaded with the extracted data. Thankfully we are part of the way there with the JSON schema program used in the load portion of the transform repo. Need to write code to extract the schema from the GDC API and write each entity to a json file. Also need to alter the JSON schema program to read from a list of fields instead of a mapping file.
+Need to create a PDC extraction code as well as an analysis code that can handle nested data. Count how many times each record is populated, and how frequently each field in the record is populated.
